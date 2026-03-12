@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: module-qc-database-tools
-  version: "2.10.0"
+  version: "2.10.1"
   python_min: '3.10'
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/module_qc_database_tools-${{ version }}.tar.gz
-  sha256: eb112f25ecc9cffacdcbcbf3b26d1bf3de5a131812dd647fafca98155d5ba7ac
+  sha256: d60235a707deaa0ef09d814b93a83304b36dcfe273af5ac8a13824da7e07d565
 
 build:
   number: 0
