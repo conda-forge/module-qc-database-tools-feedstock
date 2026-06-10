@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: module-qc-database-tools
   version: "2.11.1"
-  python_min: '3.10'
+  python_min: '3.11'
 
 package:
   name: ${{ name|lower }}
@@ -33,7 +33,6 @@ requirements:
     - hatch-vcs
   run:
     - python >=${{ python_min }}
-    - click <8.4,>=8.2.1; python_version == "3.10"
     - itkdb >=0.6.17
     - pandas
     - pyarrow
@@ -48,12 +47,10 @@ requirements:
     - cachecontrol <=0.14.1
     - arrow
     - packaging
+    - typer >=0.26.0
     # Actually only required for [py<310] but require for all Python versions so this can be noarch: python
     - typing_extensions >=4.0
     - module-qc-data-tools >=1.6.0
-    - typer >=0.26.0; python_version >'3.10'
-    - typer <0.26.0,>=0.18.0; python_version <="3.10"
-    - typing_extensions >=4.0
 
 tests:
   - python:
