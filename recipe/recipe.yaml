@@ -2,8 +2,7 @@ schema_version: 1
 
 context:
   name: module-qc-database-tools
-  version: "2.12.0"
-  python_min: '3.11'
+  version: "2.12.1"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/module_qc_database_tools-${{ version }}.tar.gz
-  sha256: 6d65c55244aa952259ee4ed52028828d6e3bcd602cb76dce852fe28b27bd3736
+  sha256: 535334ca368076d9fea72a7ebfa803b52d285fb4d7fdbe95f39950038abcf65c
 
 build:
   number: 0
@@ -50,14 +49,16 @@ requirements:
     - typer >=0.26.0
     # Actually only required for [py<310] but require for all Python versions so this can be noarch: python
     - typing_extensions >=4.0
-    - module-qc-data-tools >=1.6.0
+    - module-qc-data-tools >=1.7.2
 
 tests:
   - python:
       imports:
         - module_qc_database_tools
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - python ${{ python_min }}.*
