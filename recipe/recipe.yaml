@@ -50,7 +50,7 @@ requirements:
     - typer >=0.26.0
     # Actually only required for [py<310] but require for all Python versions so this can be noarch: python
     - typing_extensions >=4.0
-    - module-qc-data-tools >=1.6.0
+    - module-qc-data-tools >=1.7.2
 
 tests:
   - python:
